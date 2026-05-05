@@ -78,15 +78,30 @@ Do not add these in the MVP:
 
 Primary CTA:
 
-```txt
 Start a Custom Project
 
 Secondary CTA:
 
-```txt
 Shop Ready-Made
 
 Support CTA:
 
-```txt
 Browse Gallery
+
+---
+
+## Development Principle
+
+Build the site as modular, reusable content sections.
+
+Pages should be composed from configurable section blocks so the site can later migrate to Sanity CMS without rewriting the whole frontend.
+
+---
+
+## Recommended First Build Task
+
+Read README.md, AGENTS.md, and docs/*.md.
+
+Scaffold the Next.js app with TypeScript, Tailwind CSS, Framer Motion, modular routes, local content config, and reusable section components.
+
+Do not implement email, payment, Sanity, database, auth, dashboard, custom cart, or inventory sync yet.
