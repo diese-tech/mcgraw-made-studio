@@ -80,3 +80,13 @@ Primary CTA:
 
 ```txt
 Start a Custom Project
+
+Secondary CTA:
+
+```txt
+Shop Ready-Made
+
+Support CTA:
+
+```txt
+Browse Gallery
