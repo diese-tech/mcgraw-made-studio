@@ -1,9 +1,3 @@
-
----
-
-# `docs/PROJECT_BRIEF.md`
-
-```md
 # Project Brief — McGraw Made Studio
 
 ## Overview
@@ -94,38 +88,51 @@ McGraw Made Studio creates custom gifts, awards, keepsakes, signs, and fabricate
 
 ### Flow 1 — Custom Project
 
-```txt
 Visitor
 → Starts a Custom Project
 → Completes structured quote request
 → Receives confirmation
 → Business follows up with quote
 
-### Flow 2 - Ready-Made Item
+### Flow 2 — Ready-Made Item
 
-```txt
 Visitor
 → Browses Ready-Made Items
 → Clicks Buy Now
 → Completes purchase through Square payment link
 → Business fulfills pickup/shipping
 
-### Flow 3 - Gallery Inspiration
+### Flow 3 — Gallery Inspiration
 
-```txt
 Visitor
 → Browses Gallery
 → Finds past work or repeatable item
 → Requests something similar
 
 ---
-Main CTA Hierarchy
+
+## Main CTA Hierarchy
 
 Primary:
+
 Start a Custom Project
 
 Secondary:
+
 Shop Ready-Made
 
 Support:
+
 Browse Gallery
+
+---
+
+## Design Inspiration
+
+Use the builder’s existing site style as inspiration:
+
+- SwiftDispatch: clean structure, simple CTAs, polished SaaS-style footer
+- ThreeTails Booking: guided customer flow, clear step-based experience
+- GodForge: polished UI/system thinking, but avoid dark gaming aesthetic
+
+For this site, translate those patterns into a warm premium craft studio look.
