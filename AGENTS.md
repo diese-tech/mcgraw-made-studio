@@ -1,10 +1,3 @@
-
-
----
-
-# `AGENTS.md`
-
-```md
 # Agent Instructions
 
 This repo is for McGraw Made Studio, a custom fabrication and personalized goods website.
@@ -76,14 +69,14 @@ Use local content config for editable business/site content.
 
 Suggested structure:
 
-```txt
 src/content/site.ts
 src/content/home.ts
 src/content/categories.ts
 src/content/gallery.ts
+src/content/readyMade.ts
+src/content/policies.ts
 
----
-Use reusable section components
+Use reusable section components:
 
 HeroSection
 CategoryGrid
@@ -94,5 +87,149 @@ StoryPreview
 CTASection
 TrustBar
 FAQSection
-src/content/readyMade.ts
-src/content/policies.ts
+
+Page files should mostly compose sections and pass content into components.
+
+Keep layout, animations, form validation, payment link behavior, and design tokens in code.
+
+---
+
+## Domain Language
+
+Use these terms consistently:
+
+- Custom Project
+- Ready-Made Item
+- Gallery Item
+- Inquiry
+
+Do not call custom quote requests “orders” unless payment/production has actually started.
+
+---
+
+## Custom Project Flow
+
+A Custom Project is a structured quote request.
+
+Required fields:
+
+- Name
+- Email or phone
+- Project type
+- Quantity
+- Personalization/details
+- Deadline
+
+Optional fields:
+
+- Reference image upload
+- Notes
+- Preferred contact method
+- Budget range
+
+Submission flow:
+
+Form submission
+→ Business email notification
+→ Customer confirmation email
+→ Success page
+
+No database or dashboard in MVP.
+
+---
+
+## Ready-Made Flow
+
+Ready-Made Items are buy-now items.
+
+Each item should support:
+
+- Title
+- Photos
+- Description
+- Price
+- Quantity / availability
+- Square payment link
+- Buy Now button
+
+Availability statuses:
+
+- Available
+- Sold Out
+- Low Stock
+- Made-to-Order Available
+
+No “reserved” status.
+
+---
+
+## Payment Rules
+
+Ready-Made Items:
+
+- Immediate purchase through Square payment links
+- Cash App Pay may be supported through Square if enabled
+- No Zelle checkout
+
+Custom Projects:
+
+- Quote first
+- Deposit may be required after quote approval
+- Zelle may be used manually for approved custom deposits
+- Square/Cash App Pay may be used after quote approval
+
+---
+
+## Footer Rules
+
+Use a compact footer inspired by SwiftDispatch.
+
+Footer should include:
+
+- Brand name
+- Short tagline
+- Social links
+- Contact
+- Legal links
+- Copyright
+
+Legal links:
+
+- Terms
+- Refund & Custom Order Policy
+- Privacy
+- Shipping & Pickup
+
+Do not put payment methods in the footer.
+
+---
+
+## Code Quality
+
+Prefer:
+
+- Simple components
+- Strong TypeScript types
+- Reusable content types
+- Accessible buttons/links/forms
+- Mobile-first layout
+- Clear file names
+- No unnecessary dependencies
+
+Before adding a dependency, justify why it is needed.
+
+---
+
+## Implementation Style
+
+Work in small, reviewable chunks.
+
+Preferred build order:
+
+1. Scaffold app/theme/routes/content config
+2. Build homepage modular sections
+3. Build Custom Projects form and success page
+4. Build Ready-Made page with payment links
+5. Build Gallery/About/Contact pages
+6. Add policies
+7. Add polish, SEO metadata, and mobile cleanup
