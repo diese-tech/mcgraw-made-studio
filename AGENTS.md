@@ -81,5 +81,18 @@ src/content/site.ts
 src/content/home.ts
 src/content/categories.ts
 src/content/gallery.ts
+
+---
+Use reusable section components
+
+HeroSection
+CategoryGrid
+FeaturedGallery
+ProcessSteps
+ReadyMadePreview
+StoryPreview
+CTASection
+TrustBar
+FAQSection
 src/content/readyMade.ts
 src/content/policies.ts
