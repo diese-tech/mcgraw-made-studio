@@ -9,6 +9,8 @@ The site is built to support two primary customer flows:
 
 The MVP is intentionally lightweight: no cart, no database, no admin dashboard, and no CMS yet. The architecture should remain modular and CMS-ready for a future Sanity migration.
 
+Current repo handoff and recommended next build items live in `NEXT_STEPS.md`.
+
 ---
 
 ## Positioning
