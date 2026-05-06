@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { readyMadeItems } from "@/content/readyMade";
+import { getReadyMadePrimaryLabel } from "@/lib/readyMade";
 
 export function ReadyMadePreview() {
   return (
@@ -22,9 +23,13 @@ export function ReadyMadePreview() {
                   {item.availability}
                 </span>
               </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+                {item.category}
+              </p>
               <p className="text-sm leading-7 text-muted">{item.description}</p>
               <p className="text-sm font-medium text-walnut">{item.price}</p>
-              <p className="text-sm text-muted">{item.quantityNote}</p>
+              <p className="text-sm text-muted">{item.quantityLabel}</p>
+              <p className="text-sm text-muted">{getReadyMadePrimaryLabel(item)}</p>
             </div>
           </Card>
         ))}

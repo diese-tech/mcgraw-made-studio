@@ -7,6 +7,9 @@ type ButtonProps = {
   type?: "button" | "submit";
   variant?: "primary" | "secondary" | "ghost";
   className?: string;
+  disabled?: boolean;
+  target?: string;
+  rel?: string;
 };
 
 const styles = {
@@ -26,19 +29,22 @@ export function Button({
   type = "button",
   variant = "primary",
   className = "",
+  disabled = false,
+  target,
+  rel,
 }: ButtonProps) {
-  const classes = `${shared} ${styles[variant]} ${className}`.trim();
+  const classes = `${shared} ${styles[variant]} ${disabled ? " pointer-events-none opacity-50" : ""} ${className}`.trim();
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} target={target} rel={rel}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type} className={classes}>
+    <button type={type} className={classes} disabled={disabled}>
       {children}
     </button>
   );

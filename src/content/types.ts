@@ -61,11 +61,15 @@ export type ReadyMadeAvailability =
 export type ReadyMadeItem = {
   slug: string;
   title: string;
+  category: string;
   description: string;
   price: string;
   availability: ReadyMadeAvailability;
-  quantityNote: string;
+  quantityLabel: string;
+  fulfillmentNote: string;
+  materials: string;
   squareLink: string;
+  squareLinkLabel: string;
   imageLabel: string;
 };
 

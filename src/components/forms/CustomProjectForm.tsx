@@ -19,28 +19,53 @@ const budgetRanges = ["Under $100", "$100-$250", "$250-$500", "$500+", "Not sure
 
 export function CustomProjectForm() {
   const [attempted, setAttempted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
 
   return (
     <form
       noValidate
       className="soft-card rounded-[32px] p-6 sm:p-8"
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault();
         setAttempted(true);
+        setError("");
 
-        if (event.currentTarget.checkValidity()) {
-          router.push("/success");
+        if (!event.currentTarget.checkValidity()) {
+          event.currentTarget.reportValidity();
+          return;
         }
+
+        setSubmitting(true);
+
+        const response = await fetch("/api/custom-project", {
+          method: "POST",
+          body: new FormData(event.currentTarget),
+        });
+
+        if (!response.ok) {
+          const payload = (await response.json().catch(() => null)) as
+            | { error?: string }
+            | null;
+          setError(
+            payload?.error ||
+              "We couldn't send your request right now. Please try again.",
+          );
+          setSubmitting(false);
+          return;
+        }
+
+        router.push("/success");
       }}
     >
-      <div className="grid gap-5 md:grid-cols-2">
+      <fieldset disabled={submitting} className="grid gap-5 md:grid-cols-2">
         <FormField id="name" label="Name" required>
           <input
             id="name"
             name="name"
             required
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
             placeholder="Your full name"
           />
         </FormField>
@@ -55,7 +80,7 @@ export function CustomProjectForm() {
             id="emailOrPhone"
             name="emailOrPhone"
             required
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
             placeholder="name@email.com or (555) 000-0000"
           />
         </FormField>
@@ -66,7 +91,7 @@ export function CustomProjectForm() {
             name="projectType"
             required
             defaultValue=""
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
           >
             <option value="" disabled>
               Select a project type
@@ -84,7 +109,7 @@ export function CustomProjectForm() {
             id="quantity"
             name="quantity"
             required
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
             placeholder="Examples: 1, 12, 50"
           />
         </FormField>
@@ -96,7 +121,7 @@ export function CustomProjectForm() {
               name="details"
               required
               rows={5}
-              className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+              className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
               placeholder="Tell us the names, wording, colors, materials, style, and anything else that matters."
             />
           </FormField>
@@ -107,7 +132,7 @@ export function CustomProjectForm() {
             id="deadline"
             name="deadline"
             required
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
             placeholder="Event date or needed-by date"
           />
         </FormField>
@@ -117,7 +142,7 @@ export function CustomProjectForm() {
             id="contactMethod"
             name="contactMethod"
             defaultValue=""
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
           >
             <option value="">No preference</option>
             <option value="email">Email</option>
@@ -131,7 +156,7 @@ export function CustomProjectForm() {
             id="budget"
             name="budget"
             defaultValue=""
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
           >
             <option value="">Optional budget range</option>
             {budgetRanges.map((range) => (
@@ -151,7 +176,7 @@ export function CustomProjectForm() {
             id="referenceImage"
             name="referenceImage"
             type="file"
-            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+            className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
           />
         </FormField>
 
@@ -161,25 +186,31 @@ export function CustomProjectForm() {
               id="notes"
               name="notes"
               rows={4}
-              className="rounded-2xl border border-line bg-white px-4 py-3 outline-none"
+              className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
               placeholder="Anything else we should know before we follow up?"
             />
           </FormField>
         </div>
-      </div>
+      </fieldset>
 
       {attempted ? (
         <p className="mt-4 text-sm text-[#9d5c3f]">
-          Complete the required fields before continuing to the success page.
+          Complete the required fields before submitting your request.
+        </p>
+      ) : null}
+
+      {error ? (
+        <p className="mt-4 rounded-2xl border border-[#e5c9b8] bg-[#fff5ef] px-4 py-3 text-sm text-[#9d5c3f]">
+          {error}
         </p>
       ) : null}
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-xl text-sm leading-7 text-muted">
-          This scaffold validates the form locally and routes to the success page. No live email
-          sending or backend submission is wired in this issue.
+          We&apos;ll send this request to the business inbox and send a confirmation email when an
+          email address is included in your contact field.
         </p>
-        <Button type="submit">Continue</Button>
+        <Button type="submit">{submitting ? "Sending..." : "Submit Request"}</Button>
       </div>
     </form>
   );

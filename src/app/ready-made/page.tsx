@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { readyMadeItems } from "@/content/readyMade";
+import { getReadyMadePrimaryLabel, isReadyMadePurchasable } from "@/lib/readyMade";
 
 export const metadata: Metadata = {
   title: "Ready-Made",
@@ -23,6 +24,9 @@ export default function ReadyMadePage() {
             <div className="space-y-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+                    {item.category}
+                  </p>
                   <h2 className="font-display text-3xl text-walnut">{item.title}</h2>
                   <p className="mt-1 text-sm font-medium text-walnut">{item.price}</p>
                 </div>
@@ -31,13 +35,36 @@ export default function ReadyMadePage() {
                 </span>
               </div>
               <p className="text-sm leading-7 text-muted">{item.description}</p>
-              <p className="text-sm text-muted">{item.quantityNote}</p>
+              <div className="grid gap-2 rounded-[20px] border border-line bg-white/60 p-4 text-sm text-muted">
+                <p>
+                  <span className="font-medium text-walnut">Quantity / availability:</span>{" "}
+                  {item.quantityLabel}
+                </p>
+                <p>
+                  <span className="font-medium text-walnut">Materials:</span> {item.materials}
+                </p>
+                <p>
+                  <span className="font-medium text-walnut">Fulfillment:</span>{" "}
+                  {item.fulfillmentNote}
+                </p>
+              </div>
               <div className="flex flex-col gap-3 sm:flex-row">
-                <Button href={item.squareLink}>Buy Now</Button>
-                <Button href="/contact" variant="ghost">
+                <Button
+                  href={isReadyMadePurchasable(item) ? item.squareLink : undefined}
+                  disabled={!isReadyMadePurchasable(item)}
+                  target={isReadyMadePurchasable(item) ? "_blank" : undefined}
+                  rel={isReadyMadePurchasable(item) ? "noreferrer" : undefined}
+                >
+                  {getReadyMadePrimaryLabel(item)}
+                </Button>
+                <Button href={`/contact?item=${item.slug}`} variant="ghost">
                   Ask a Question
                 </Button>
               </div>
+              <p className="text-xs leading-6 text-muted">
+                Square checkout opens in a new tab when the item is available for immediate
+                purchase.
+              </p>
             </div>
           </Card>
         ))}
