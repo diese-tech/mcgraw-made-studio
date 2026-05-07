@@ -33,9 +33,7 @@ This file is the handoff anchor for future sessions.
 - `.env.example` should stay committed as the public template for required production email variables
 - Production verification steps now live in `docs/DEPLOYMENT_CHECKLIST.md`
 - Sanity migration scoping now lives in `docs/SANITY_SCOPING.md`
-- The GitHub issue queue is currently empty, so future work should either:
-  - create new issues first, or
-  - use the recommended build order below
+- GitHub issues are being used for launch follow-up. At this point, the remaining known blocker is replacing placeholder Square links with real payment links.
 
 ## Recommended Next Build Order
 
@@ -47,13 +45,13 @@ This file is the handoff anchor for future sessions.
 
 2. Real content replacement
    - Replace placeholder Ready-Made items, gallery entries, and image assets with real business content
-   - Replace placeholder Square links with actual product/payment links
+   - Remaining: replace placeholder Square links with actual product/payment links when available
 
 3. SEO and launch polish
    - Done: add richer metadata per page
    - Done: add Open Graph image strategy
    - Done: add sitemap/robots
-   - Final mobile QA across all public pages
+   - Done: final launch QA across public routes and link targets
 
 4. Contact page upgrade
    - Decision: keep `/contact` instruction-only for MVP now that Custom Project submissions are verified
