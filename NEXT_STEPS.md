@@ -28,7 +28,9 @@ This file is the handoff anchor for future sessions.
 ## Known Notes
 
 - `.env.local` is required for live email sending and should not be committed
-- `.env.example` is currently ignored by `.gitignore`, so environment examples are not tracked unless that ignore rule is changed
+- `.env.example` should stay committed as the public template for required production email variables
+- Production verification steps now live in `docs/DEPLOYMENT_CHECKLIST.md`
+- Sanity migration scoping now lives in `docs/SANITY_SCOPING.md`
 - The GitHub issue queue is currently empty, so future work should either:
   - create new issues first, or
   - use the recommended build order below
@@ -39,11 +41,11 @@ This file is the handoff anchor for future sessions.
    - Confirm Vercel production env vars match local working values
    - Verify `mcgrawmade.com` and `www` canonical redirect behavior
    - Run one real production Custom Project submission after deploy
+   - Confirm business notification email and customer confirmation email both arrive
 
 2. Real content replacement
-   - Replace placeholder Ready-Made items, gallery entries, and image labels with real business content
+   - Replace placeholder Ready-Made items, gallery entries, and image assets with real business content
    - Replace placeholder Square links with actual product/payment links
-   - Replace placeholder contact/business details if needed
 
 3. SEO and launch polish
    - Add richer metadata per page
@@ -66,3 +68,18 @@ This file is the handoff anchor for future sessions.
 - `Add launch SEO metadata and social preview polish`
 - `Build general Contact inquiry flow`
 - `Build lightweight seasonal item management workflow`
+
+## If Picking This Up On Another Machine
+
+Start with:
+
+```powershell
+git status --short
+npm run lint
+npm run build
+```
+
+Then use:
+
+- `docs/DEPLOYMENT_CHECKLIST.md` for launch verification
+- `docs/SANITY_SCOPING.md` for the future CMS plan

@@ -6,7 +6,7 @@ export const siteContent: SiteContent = {
     tagline: "Custom fabrication, gifts, awards, and keepsakes made with care.",
     location: "Based in New York",
     email: "hello@mcgrawmade.com",
-    phone: "(555) 014-2874",
+    phone: "646-372-6479",
   },
   announcement:
     "Warm, custom work for gifts, events, awards, decor, and ready-made finds.",
@@ -24,11 +24,12 @@ export const siteContent: SiteContent = {
     { label: "Shipping & Pickup", href: "/shipping-pickup" },
   ],
   socialLinks: [
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "Facebook", href: "https://facebook.com" },
+    { label: "Instagram", href: "https://www.instagram.com/mcgrawdesignco" },
+    { label: "Facebook", href: "https://www.facebook.com/McGrawWoodCrafts" },
+    { label: "TikTok", href: "https://www.tiktok.com/@mcgrawdesignco" },
   ],
   seo: {
-    siteUrl: "https://mcgraw-made-studio.vercel.app",
+    siteUrl: "https://mcgrawmade.com",
     defaultTitle: "McGraw Made Studio",
     description:
       "Warm premium custom fabrication, personalized gifts, awards, signs, and ready-made pieces.",
