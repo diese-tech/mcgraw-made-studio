@@ -1,4 +1,7 @@
-import type { CustomProjectSubmission } from "@/lib/customProject";
+import type {
+  CustomProjectAttachment,
+  CustomProjectSubmission,
+} from "@/lib/customProject";
 import { getResendClient } from "@/lib/resend";
 
 function getConfigError() {
@@ -25,6 +28,15 @@ function formatOptional(value: string) {
   return value || "Not provided";
 }
 
+function escapeHtml(value: string) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function buildBusinessEmailText(submission: CustomProjectSubmission) {
   return [
     "New Custom Project inquiry",
@@ -36,6 +48,7 @@ function buildBusinessEmailText(submission: CustomProjectSubmission) {
     `Deadline: ${submission.deadline}`,
     `Preferred contact method: ${formatOptional(submission.contactMethod)}`,
     `Budget range: ${formatOptional(submission.budget)}`,
+    `Reference file: ${formatOptional(submission.referenceFileName)}`,
     `Notes: ${formatOptional(submission.notes)}`,
     `Timestamp: ${submission.submittedAtIso}`,
     "",
@@ -48,18 +61,19 @@ function buildBusinessEmailHtml(submission: CustomProjectSubmission) {
   return `
     <div style="font-family: Arial, sans-serif; color: #2b2b2b; line-height: 1.6;">
       <h1 style="font-size: 24px; margin-bottom: 16px;">New Custom Project inquiry</h1>
-      <p><strong>Name:</strong> ${submission.name}</p>
-      <p><strong>Email or phone:</strong> ${submission.emailOrPhone}</p>
-      <p><strong>Project type:</strong> ${submission.projectType}</p>
-      <p><strong>Quantity:</strong> ${submission.quantity}</p>
-      <p><strong>Deadline:</strong> ${submission.deadline}</p>
-      <p><strong>Preferred contact method:</strong> ${formatOptional(submission.contactMethod)}</p>
-      <p><strong>Budget range:</strong> ${formatOptional(submission.budget)}</p>
-      <p><strong>Notes:</strong> ${formatOptional(submission.notes)}</p>
-      <p><strong>Timestamp:</strong> ${submission.submittedAtIso}</p>
+      <p><strong>Name:</strong> ${escapeHtml(submission.name)}</p>
+      <p><strong>Email or phone:</strong> ${escapeHtml(submission.emailOrPhone)}</p>
+      <p><strong>Project type:</strong> ${escapeHtml(submission.projectType)}</p>
+      <p><strong>Quantity:</strong> ${escapeHtml(submission.quantity)}</p>
+      <p><strong>Deadline:</strong> ${escapeHtml(submission.deadline)}</p>
+      <p><strong>Preferred contact method:</strong> ${escapeHtml(formatOptional(submission.contactMethod))}</p>
+      <p><strong>Budget range:</strong> ${escapeHtml(formatOptional(submission.budget))}</p>
+      <p><strong>Reference file:</strong> ${escapeHtml(formatOptional(submission.referenceFileName))}</p>
+      <p><strong>Notes:</strong> ${escapeHtml(formatOptional(submission.notes))}</p>
+      <p><strong>Timestamp:</strong> ${escapeHtml(submission.submittedAtIso)}</p>
       <div style="margin-top: 24px;">
         <p style="margin-bottom: 8px;"><strong>Details:</strong></p>
-        <p style="white-space: pre-wrap;">${submission.details}</p>
+        <p style="white-space: pre-wrap;">${escapeHtml(submission.details)}</p>
       </div>
     </div>
   `;
@@ -82,7 +96,7 @@ function buildCustomerConfirmationText(submission: CustomProjectSubmission) {
 function buildCustomerConfirmationHtml(submission: CustomProjectSubmission) {
   return `
     <div style="font-family: Arial, sans-serif; color: #2b2b2b; line-height: 1.6;">
-      <p>Hi ${submission.name},</p>
+      <p>Hi ${escapeHtml(submission.name)},</p>
       <p>Your custom project request was received.</p>
       <p>Most custom project requests receive a response within 1 to 2 business days.</p>
       <p>Rush timelines are not guaranteed unless they are confirmed directly.</p>
@@ -94,6 +108,7 @@ function buildCustomerConfirmationHtml(submission: CustomProjectSubmission) {
 
 export async function sendCustomProjectEmails(
   submission: CustomProjectSubmission,
+  attachment: CustomProjectAttachment | null,
 ) {
   const configError = getConfigError();
   if (configError) {
@@ -131,6 +146,7 @@ export async function sendCustomProjectEmails(
     subject: `New Custom Project inquiry from ${submission.name}`,
     text: buildBusinessEmailText(submission),
     html: buildBusinessEmailHtml(submission),
+    attachments: attachment ? [attachment] : undefined,
   });
 
   if (businessResult.error) {

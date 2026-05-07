@@ -4,8 +4,8 @@ Custom website for McGraw Made Studio, a warm premium custom fabrication and per
 
 The site is built to support two primary customer flows:
 
-1. **Custom Projects** — customers submit structured quote requests for made-to-order work.
-2. **Ready-Made Items** — customers browse purchasable finished items and buy through Square payment links.
+1. **Custom Projects** - customers submit structured quote requests for made-to-order work.
+2. **Ready-Made Items** - customers browse finished items and buy through Square payment links when live links are available.
 
 The MVP is intentionally lightweight: no cart, no database, no admin dashboard, and no CMS yet. The architecture should remain modular and CMS-ready for a future Sanity migration.
 
@@ -25,7 +25,7 @@ The brand should feel:
 - Trustworthy
 - Capable of making a wide range of custom work
 
-The name is currently a working placeholder inspired by McGraw Ave, the street where the family grew up in New York.
+The name is inspired by McGraw Ave, the street that still represents home and family roots for the owner. The studio now serves customers from Central Florida.
 
 ---
 
@@ -52,9 +52,8 @@ The name is currently a working placeholder inspired by McGraw Ave, the street w
 - Tailwind CSS
 - Framer Motion
 - Vercel
-- React Hook Form
 - Local content config
-- Email submission flow
+- Email submission flow with optional small reference-image attachments
 - Square payment-link support for ready-made items
 
 ---
@@ -106,4 +105,4 @@ Read README.md, AGENTS.md, and docs/*.md.
 
 Scaffold the Next.js app with TypeScript, Tailwind CSS, Framer Motion, modular routes, local content config, and reusable section components.
 
-Do not implement email, payment, Sanity, database, auth, dashboard, custom cart, or inventory sync yet.
+Do not implement payment APIs, Sanity, database, auth, dashboard, custom cart, or inventory sync yet.

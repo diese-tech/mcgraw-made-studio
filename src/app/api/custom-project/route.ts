@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   const formData = await request.formData();
-  const validation = validateCustomProjectForm(formData);
+  const validation = await validateCustomProjectForm(formData);
 
   if (!validation.ok) {
     return NextResponse.json(
@@ -15,7 +15,10 @@ export async function POST(request: Request) {
     );
   }
 
-  const result = await sendCustomProjectEmails(validation.data);
+  const result = await sendCustomProjectEmails(
+    validation.data,
+    validation.attachment,
+  );
 
   if (!result.ok) {
     return NextResponse.json(

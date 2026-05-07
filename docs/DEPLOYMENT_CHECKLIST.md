@@ -20,9 +20,10 @@ Expected success behavior in production:
 
 1. Valid form submission reaches the API route.
 2. The business notification email is sent to `BUSINESS_INQUIRY_EMAIL`.
-3. If the customer entered a real email address, a confirmation email is attempted from `FROM_EMAIL`.
-4. The API returns `200` with `{ "ok": true }`.
-5. The frontend success flow completes.
+3. If the inquiry includes an optional reference image or PDF under 5 MB, it is attached to the business notification email.
+4. If the customer entered a real email address, a confirmation email is attempted from `FROM_EMAIL`.
+5. The API returns `200` with `{ "ok": true }`.
+6. The frontend success flow completes.
 
 Expected failure behavior when env vars are missing:
 
@@ -79,6 +80,7 @@ Status: completed. A production submission was verified with both the business n
 4. Confirm the business notification email arrives in `BUSINESS_INQUIRY_EMAIL`.
 5. Confirm the customer confirmation email arrives at the submitted customer email address.
 6. Confirm the email sender, subject lines, and body copy look correct.
+7. Optional: submit one small reference image/PDF and confirm it arrives on the business notification email.
 
 ## Current placeholder launch blockers
 

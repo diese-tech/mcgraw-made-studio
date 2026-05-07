@@ -171,12 +171,13 @@ export function CustomProjectForm() {
         <FormField
           id="referenceImage"
           label="Reference image upload"
-          hint="This is a UI placeholder only for the MVP scaffold."
+          hint="Optional image or PDF, up to 5 MB."
         >
           <input
             id="referenceImage"
             name="referenceImage"
             type="file"
+            accept="image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf"
             className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
           />
         </FormField>

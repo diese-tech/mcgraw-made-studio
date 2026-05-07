@@ -4,7 +4,7 @@ This file is the handoff anchor for future sessions.
 
 ## Current State
 
-- Repo: `C:\Projects\misc\mcgraw-made`
+- Repo: `C:\Projects\MVPs\McGrawMadeStudios`
 - Branch: `main`
 - Hosting direction: Vercel
 - Domain: `mcgrawmade.com`
@@ -16,6 +16,10 @@ This file is the handoff anchor for future sessions.
 - Issue `#1`: MVP scaffold foundation
 - Issue `#2`: Custom Project submission flow with backend email sending
 - Issue `#3`: Ready-Made purchase model and Square-link flow
+- Issue `#4`: Production deployment readiness verification
+- Issue `#6`: Minimum viable SEO/social preview polish
+- Issue `#7`: Final mobile-first QA
+- Issue `#8`: CMS/post-launch content workflow planning
 
 ## Verified Working
 
@@ -23,6 +27,7 @@ This file is the handoff anchor for future sessions.
 - Custom Project form submits through backend logic
 - Live test to `POST /api/custom-project` returned `200` with `{"ok":true}`
 - Ready-Made items support availability-aware Square purchase CTAs
+- Optional reference image/PDF uploads are attached to business inquiry emails when they are under 5 MB
 - Domain setup has been started and site/domain flow appears to be working
 - Production Custom Project submission has been verified with both owner notification and customer confirmation emails arriving
 - `mcgrawmade.com` is the canonical production hostname, with `www` redirecting to the apex domain

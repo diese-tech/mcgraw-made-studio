@@ -1,4 +1,4 @@
-# Project Brief — McGraw Made Studio
+# Project Brief - McGraw Made Studio
 
 ## Overview
 
@@ -16,7 +16,7 @@ The business creates a wide range of products, including:
 - Custom keepsakes
 - Bulk/event pieces
 
-The business started under the name McGrawDesignCo. The new working name, McGraw Made Studio, keeps the brand close to the family roots of McGraw Ave in New York while allowing the business to grow beyond one craft category.
+The business started under the name McGrawDesignCo. The new name, McGraw Made Studio, keeps the brand close to the family roots of McGraw Ave while allowing the business to grow beyond one craft category. The studio currently serves customers from Central Florida.
 
 ---
 
@@ -86,28 +86,28 @@ McGraw Made Studio creates custom gifts, awards, keepsakes, signs, and fabricate
 
 ## Primary Customer Flows
 
-### Flow 1 — Custom Project
+### Flow 1 - Custom Project
 
 Visitor
-→ Starts a Custom Project
-→ Completes structured quote request
-→ Receives confirmation
-→ Business follows up with quote
+-> Starts a Custom Project
+-> Completes structured quote request
+-> Receives confirmation
+-> Business follows up with quote
 
-### Flow 2 — Ready-Made Item
-
-Visitor
-→ Browses Ready-Made Items
-→ Clicks Buy Now
-→ Completes purchase through Square payment link
-→ Business fulfills pickup/shipping
-
-### Flow 3 — Gallery Inspiration
+### Flow 2 - Ready-Made Item
 
 Visitor
-→ Browses Gallery
-→ Finds past work or repeatable item
-→ Requests something similar
+-> Browses Ready-Made Items
+-> Clicks Buy Now when a live Square payment link is available
+-> Completes purchase through Square payment link
+-> Business fulfills pickup/shipping
+
+### Flow 3 - Gallery Inspiration
+
+Visitor
+-> Browses Gallery
+-> Finds past work or repeatable item
+-> Requests something similar
 
 ---
 
@@ -129,7 +129,7 @@ Browse Gallery
 
 ## Design Inspiration
 
-Use the builder’s existing site style as inspiration:
+Use the builder's existing site style as inspiration:
 
 - SwiftDispatch: clean structure, simple CTAs, polished SaaS-style footer
 - ThreeTails Booking: guided customer flow, clear step-based experience
