@@ -17,6 +17,10 @@ function getConfigError() {
   return "Email delivery is temporarily unavailable. Please try again soon.";
 }
 
+function logEmailError(label: string, error: unknown) {
+  console.error(`[custom-project-email] ${label}`, error);
+}
+
 function formatOptional(value: string) {
   return value || "Not provided";
 }
@@ -93,6 +97,12 @@ export async function sendCustomProjectEmails(
 ) {
   const configError = getConfigError();
   if (configError) {
+    logEmailError("missing email configuration", {
+      hasResendApiKey: Boolean(process.env.RESEND_API_KEY),
+      hasBusinessInquiryEmail: Boolean(process.env.BUSINESS_INQUIRY_EMAIL),
+      hasFromEmail: Boolean(process.env.FROM_EMAIL),
+    });
+
     return {
       ok: false as const,
       error: configError,
@@ -101,6 +111,10 @@ export async function sendCustomProjectEmails(
 
   const resend = getResendClient();
   if (!resend) {
+    logEmailError("resend client unavailable", {
+      hasResendApiKey: Boolean(process.env.RESEND_API_KEY),
+    });
+
     return {
       ok: false as const,
       error: "Email delivery is temporarily unavailable. Please try again soon.",
@@ -113,12 +127,15 @@ export async function sendCustomProjectEmails(
   const businessResult = await resend.emails.send({
     from,
     to: businessInbox,
+    replyTo: submission.customerEmail || businessInbox,
     subject: `New Custom Project inquiry from ${submission.name}`,
     text: buildBusinessEmailText(submission),
     html: buildBusinessEmailHtml(submission),
   });
 
   if (businessResult.error) {
+    logEmailError("business email failed", businessResult.error);
+
     return {
       ok: false as const,
       error:
@@ -132,19 +149,14 @@ export async function sendCustomProjectEmails(
     const customerResult = await resend.emails.send({
       from,
       to: submission.customerEmail,
+      replyTo: businessInbox,
       subject: "We received your custom project request",
       text: buildCustomerConfirmationText(submission),
       html: buildCustomerConfirmationHtml(submission),
     });
 
     if (customerResult.error) {
-      return {
-        ok: false as const,
-        error:
-          process.env.NODE_ENV !== "production"
-            ? `Customer confirmation email failed: ${customerResult.error.message}`
-            : "We couldn't send your request right now. Please try again soon.",
-      };
+      logEmailError("customer confirmation email failed", customerResult.error);
     }
   }
 

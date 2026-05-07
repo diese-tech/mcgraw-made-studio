@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { FormField } from "@/components/ui/FormField";
+import { siteContent } from "@/content/site";
 
 const projectTypes = [
   "Personalized Gift",
@@ -201,7 +202,8 @@ export function CustomProjectForm() {
 
       {error ? (
         <p className="mt-4 rounded-2xl border border-[#e5c9b8] bg-[#fff5ef] px-4 py-3 text-sm text-[#9d5c3f]">
-          {error}
+          {error} You can also reach us directly at {siteContent.brand.email} or{" "}
+          {siteContent.brand.phone}.
         </p>
       ) : null}
 

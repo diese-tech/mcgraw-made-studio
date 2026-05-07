@@ -6,7 +6,7 @@ export const siteContent: SiteContent = {
     tagline: "Custom fabrication, gifts, awards, and keepsakes made with care.",
     location: "Based in Central Florida",
     email: "hello@mcgrawmade.com",
-    phone: "646-372-6479",
+    phone: "863-320-0820",
   },
   announcement:
     "Warm, custom work for gifts, events, awards, decor, and ready-made finds.",
