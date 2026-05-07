@@ -1,14 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { galleryItems } from "@/content/gallery";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Gallery",
-  description: "Portfolio proof, inspiration, and repeatable work.",
-};
+  description:
+    "Browse McGraw Made Studio custom work including personalized gifts, signs, awards, plaques, UV printed pieces, 3D printed items, and keepsakes.",
+  path: "/gallery",
+  image: galleryItems[5].imageSrc,
+});
 
 export default function GalleryPage() {
   return (

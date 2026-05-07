@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { policyPages } from "@/content/policies";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Shipping & Pickup",
-};
+  description:
+    "Shipping and pickup expectations for McGraw Made Studio custom projects and ready-made items.",
+  path: "/shipping-pickup",
+});
 
 const page = policyPages.find((item) => item.slug === "shipping-pickup");
 

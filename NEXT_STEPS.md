@@ -24,6 +24,8 @@ This file is the handoff anchor for future sessions.
 - Live test to `POST /api/custom-project` returned `200` with `{"ok":true}`
 - Ready-Made items support availability-aware Square purchase CTAs
 - Domain setup has been started and site/domain flow appears to be working
+- Production Custom Project submission has been verified with both owner notification and customer confirmation emails arriving
+- `mcgrawmade.com` is the canonical production hostname, with `www` redirecting to the apex domain
 
 ## Known Notes
 
@@ -39,9 +41,9 @@ This file is the handoff anchor for future sessions.
 
 1. Production deployment hardening
    - Confirm Vercel production env vars match local working values
-   - Verify `mcgrawmade.com` and `www` canonical redirect behavior
-   - Run one real production Custom Project submission after deploy
-   - Confirm business notification email and customer confirmation email both arrive
+   - Done: verify `mcgrawmade.com` and `www` canonical redirect behavior
+   - Done: run one real production Custom Project submission after deploy
+   - Done: confirm business notification email and customer confirmation email both arrive
 
 2. Real content replacement
    - Replace placeholder Ready-Made items, gallery entries, and image assets with real business content

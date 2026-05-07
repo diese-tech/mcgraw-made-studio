@@ -1,19 +1,21 @@
-import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Success",
-  description: "Confirmation page for the Custom Project scaffold flow.",
-};
+  description:
+    "Confirmation that your McGraw Made Studio custom project request was received for follow-up.",
+  path: "/success",
+});
 
 export default function SuccessPage() {
   return (
     <Section
       eyebrow="Success"
       title="Thanks, your Custom Project request is ready for follow-up."
-      description="This is the scaffolded confirmation state for the MVP issue."
+      description="We received your details and will review the request before following up."
     >
       <Card className="mx-auto max-w-2xl text-center">
         <p className="text-lg leading-8 text-muted">

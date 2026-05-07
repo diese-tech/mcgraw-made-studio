@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { siteContent } from "@/content/site";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact",
-  description: "Ways to reach McGraw Made Studio and expected response timing.",
-};
+  description:
+    "Contact McGraw Made Studio for general questions, custom project timing, ready-made gifts, and Central Florida pickup or shipping details.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

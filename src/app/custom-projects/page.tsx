@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import { CustomProjectForm } from "@/components/forms/CustomProjectForm";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Custom Projects",
-  description: "Structured quote request flow for custom work.",
-};
+  description:
+    "Start a custom project request for personalized signs, gifts, awards, plaques, decor, UV printed items, 3D printed items, and event pieces.",
+  path: "/custom-projects",
+});
 
 export default function CustomProjectsPage() {
   return (

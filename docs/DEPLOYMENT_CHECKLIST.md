@@ -7,8 +7,8 @@ This checklist is for verifying the McGraw Made Studio MVP is ready to launch on
 Set these in Vercel for the Production environment:
 
 - `RESEND_API_KEY`
-- `BUSINESS_INQUIRY_EMAIL`
-- `FROM_EMAIL`
+- `BUSINESS_INQUIRY_EMAIL` = `mcgrawdesignco@gmail.com`
+- `FROM_EMAIL` = `McGraw Made Studio <no-reply@mcgrawmade.com>` after `mcgrawmade.com` is verified in Resend
 
 Use the same keys in local `.env` or `.env.local` for local email testing. Commit only `.env.example`.
 
@@ -20,7 +20,7 @@ Expected success behavior in production:
 
 1. Valid form submission reaches the API route.
 2. The business notification email is sent to `BUSINESS_INQUIRY_EMAIL`.
-3. If the customer entered a real email address, a confirmation email is sent to that customer from `FROM_EMAIL`.
+3. If the customer entered a real email address, a confirmation email is attempted from `FROM_EMAIL`.
 4. The API returns `200` with `{ "ok": true }`.
 5. The frontend success flow completes.
 
@@ -33,8 +33,9 @@ Expected failure behavior when env vars are missing:
 Expected failure behavior when Resend send calls fail:
 
 - If the business notification email fails, the submission is treated as failed and returns `500`.
-- If the customer confirmation email fails, the submission is also treated as failed and returns `500`.
+- If the customer confirmation email fails after the business notification succeeds, the inquiry still returns `200` and the confirmation failure is logged.
 - In production, send failures return a generic customer-safe message instead of provider details.
+- The form displays direct contact fallback details when submission fails.
 
 ## Vercel production checklist
 
@@ -64,6 +65,8 @@ Expected failure behavior when Resend send calls fail:
 
 Run one live production Custom Project submission after env vars and domains are fully configured.
 
+Status: completed. A production submission was verified with both the business notification email and customer confirmation email arriving.
+
 1. Open the production Custom Project page.
 2. Submit a valid test inquiry with:
    - a real name
@@ -83,7 +86,6 @@ These should be replaced with real business data before launch, but they should 
 
 - `src/content/readyMade.ts`
   - placeholder Square payment links for all Ready-Made Items
-- visual placeholder image blocks remain in several public pages and sections
 
 ## Manual verification commands
 

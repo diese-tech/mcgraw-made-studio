@@ -1,14 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { homeContent } from "@/content/home";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "About",
-  description: "The family roots and studio story behind McGraw Made Studio.",
-};
+  description:
+    "Learn the family-rooted story behind McGraw Made Studio, a Central Florida custom fabrication and personalized goods studio.",
+  path: "/about",
+  image: homeContent.story.imageSrc,
+});
 
 export default function AboutPage() {
   return (

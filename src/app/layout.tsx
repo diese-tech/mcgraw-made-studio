@@ -23,6 +23,37 @@ export const metadata: Metadata = {
     template: `%s | ${siteContent.brand.name}`,
   },
   description: siteContent.seo.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: siteContent.seo.defaultTitle,
+    description: siteContent.seo.description,
+    url: siteContent.seo.siteUrl,
+    siteName: siteContent.brand.name,
+    images: [
+      {
+        url: "/images/mcgraw-made/hero/mcgraw-made-hero-wedding-guestbook-tree-01.jpg",
+        width: 1200,
+        height: 900,
+        alt: "McGraw Made Studio personalized wedding guestbook tree",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteContent.seo.defaultTitle,
+    description: siteContent.seo.description,
+    images: [
+      "/images/mcgraw-made/hero/mcgraw-made-hero-wedding-guestbook-tree-01.jpg",
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

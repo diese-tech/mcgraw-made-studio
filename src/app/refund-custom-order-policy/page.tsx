@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { policyPages } from "@/content/policies";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Refund & Custom Order Policy",
-};
+  description:
+    "Refund and custom order policy details for McGraw Made Studio custom projects and ready-made pieces.",
+  path: "/refund-custom-order-policy",
+});
 
 const page = policyPages.find((item) => item.slug === "refund-custom-order-policy");
 

@@ -1,15 +1,18 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
 import { readyMadeItems } from "@/content/readyMade";
 import { getReadyMadePrimaryLabel, isReadyMadePurchasable } from "@/lib/readyMade";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Ready-Made",
-  description: "Finished and limited-quantity items with direct Square payment links.",
-};
+  description:
+    "Shop finished and small-batch ready-made gifts from McGraw Made Studio, including seasonal items, home gifts, ornaments, and activity kits.",
+  path: "/ready-made",
+  image: readyMadeItems[0].imageSrc,
+});
 
 export default function ReadyMadePage() {
   return (

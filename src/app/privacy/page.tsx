@@ -1,10 +1,13 @@
-import type { Metadata } from "next";
 import { Section } from "@/components/ui/Section";
 import { policyPages } from "@/content/policies";
+import { buildPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy",
-};
+  description:
+    "Privacy information for McGraw Made Studio inquiries, contact details, and website use.",
+  path: "/privacy",
+});
 
 const page = policyPages.find((item) => item.slug === "privacy");
 
