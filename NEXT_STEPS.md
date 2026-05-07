@@ -50,13 +50,13 @@ This file is the handoff anchor for future sessions.
    - Replace placeholder Square links with actual product/payment links
 
 3. SEO and launch polish
-   - Add richer metadata per page
-   - Add Open Graph image strategy
-   - Add sitemap/robots if needed
+   - Done: add richer metadata per page
+   - Done: add Open Graph image strategy
+   - Done: add sitemap/robots
    - Final mobile QA across all public pages
 
 4. Contact page upgrade
-   - Decide whether `/contact` should stay instruction-only or get its own general inquiry submission flow
+   - Decision: keep `/contact` instruction-only for MVP now that Custom Project submissions are verified
    - Keep it separate from the Custom Project form unless product intent changes
 
 5. Post-launch revenue tooling

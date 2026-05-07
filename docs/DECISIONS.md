@@ -408,3 +408,19 @@ MVP excludes:
 - Review system
 - Complex filtering
 - Database
+
+---
+
+## Decision 22 - Contact Page Model
+
+The `/contact` page stays instruction-only for the MVP.
+
+Reasons:
+
+- The Custom Project form is the structured quote request path and is now verified in production.
+- A separate general inquiry form would add another email workflow to maintain without a clear launch need.
+- General questions can use the public email, phone number, or social links, while quote-ready requests should use `/custom-projects`.
+
+Future note:
+
+- If the business starts receiving a meaningful volume of non-quote questions, add a lightweight general inquiry form as a separate flow from Custom Projects.
