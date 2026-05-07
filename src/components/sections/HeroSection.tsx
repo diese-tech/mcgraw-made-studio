@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { homeContent } from "@/content/home";
@@ -48,26 +49,43 @@ export function HeroSection() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="grid gap-4 sm:grid-cols-2"
         >
-          <div className="image-placeholder soft-card rounded-[32px] p-6 sm:row-span-2 sm:min-h-[460px]">
-            <div className="flex h-full flex-col justify-between">
-              <span className="text-sm font-medium uppercase tracking-[0.16em] text-walnut">
+          <div className="soft-card relative min-h-[460px] overflow-hidden rounded-[32px] p-6 sm:row-span-2">
+            <Image
+              src={hero.collageImages[0].src}
+              alt={hero.collageImages[0].alt}
+              fill
+              priority
+              sizes="(min-width: 1024px) 44vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(43,43,43,0.08)_0%,rgba(43,43,43,0.62)_100%)]" />
+            <div className="relative z-10 flex h-full flex-col justify-between">
+              <span className="text-sm font-medium uppercase tracking-[0.16em] text-white">
                 Featured work
               </span>
               <div>
-                <p className="font-display text-3xl text-walnut">{hero.collageLabels[0]}</p>
-                <p className="mt-2 max-w-xs text-sm leading-7 text-muted">
-                  Placeholder imagery block for the strongest launch-ready project photography.
+                <p className="font-display text-3xl text-white">{hero.collageImages[0].title}</p>
+                <p className="mt-2 max-w-xs text-sm leading-7 text-white/82">
+                  {hero.collageImages[0].description}
                 </p>
               </div>
             </div>
           </div>
-          {hero.collageLabels.slice(1).map((label) => (
+          {hero.collageImages.slice(1).map((image) => (
             <div
-              key={label}
-              className="image-placeholder soft-card min-h-[220px] rounded-[28px] p-6"
+              key={image.src}
+              className="soft-card relative min-h-[220px] overflow-hidden rounded-[28px] p-6"
             >
-              <div className="flex h-full items-end">
-                <p className="font-display text-2xl text-walnut">{label}</p>
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(min-width: 1024px) 22vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(43,43,43,0.02)_20%,rgba(43,43,43,0.58)_100%)]" />
+              <div className="relative z-10 flex h-full items-end">
+                <p className="font-display text-2xl text-white">{image.title}</p>
               </div>
             </div>
           ))}

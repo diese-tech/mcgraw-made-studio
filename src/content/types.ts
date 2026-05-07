@@ -33,6 +33,8 @@ export type Category = {
   description: string;
   eyebrow: string;
   imageLabel: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export type GalleryRepeatability =
@@ -50,6 +52,8 @@ export type GalleryItem = {
   ctaLabel: string;
   ctaHref: string;
   imageLabel: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 export type ReadyMadeAvailability =
@@ -71,6 +75,8 @@ export type ReadyMadeItem = {
   squareLink: string;
   squareLinkLabel: string;
   imageLabel: string;
+  imageSrc: string;
+  imageAlt: string;
 };
 
 export type FaqItem = {
@@ -81,6 +87,8 @@ export type FaqItem = {
 export type ProcessStep = {
   title: string;
   description: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 export type HomeContent = {
@@ -93,6 +101,12 @@ export type HomeContent = {
     supportCta: NavLink;
     stats: Array<{ label: string; value: string }>;
     collageLabels: string[];
+    collageImages: Array<{
+      src: string;
+      alt: string;
+      title: string;
+      description?: string;
+    }>;
   };
   trustBar: string[];
   processSteps: ProcessStep[];
@@ -101,6 +115,8 @@ export type HomeContent = {
     title: string;
     description: string;
     cta: NavLink;
+    imageSrc: string;
+    imageAlt: string;
   };
   finalCta: {
     title: string;

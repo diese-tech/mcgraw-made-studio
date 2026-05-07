@@ -20,6 +20,8 @@ export function FeaturedGallery() {
             title={item.title}
             description={item.caption}
             footer={item.materials}
+            imageSrc={item.imageSrc}
+            imageAlt={item.imageAlt}
           />
         ))}
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
@@ -11,7 +12,15 @@ export function StoryPreview() {
       description={homeContent.story.description}
     >
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
-        <div className="image-placeholder soft-card min-h-[320px] rounded-[32px] p-6" />
+        <div className="soft-card relative min-h-[320px] overflow-hidden rounded-[32px]">
+          <Image
+            src={homeContent.story.imageSrc}
+            alt={homeContent.story.imageAlt}
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-cover"
+          />
+        </div>
         <Card className="flex flex-col justify-between">
           <div className="space-y-4">
             <p className="text-sm leading-7 text-muted">

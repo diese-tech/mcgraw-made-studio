@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
@@ -20,7 +21,15 @@ export default function ReadyMadePage() {
       <div className="grid gap-6 lg:grid-cols-2">
         {readyMadeItems.map((item) => (
           <Card key={item.slug}>
-            <div className="image-placeholder mb-5 aspect-[5/4] rounded-[24px] p-4" />
+            <div className="relative mb-5 aspect-[5/4] overflow-hidden rounded-[24px]">
+              <Image
+                src={item.imageSrc}
+                alt={item.imageAlt}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
             <div className="space-y-4">
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>

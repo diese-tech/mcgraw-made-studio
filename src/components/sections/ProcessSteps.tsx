@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/Badge";
 import { Card } from "@/components/ui/Card";
 import { Section } from "@/components/ui/Section";
@@ -12,10 +13,23 @@ export function ProcessSteps() {
     >
       <div className="grid gap-6 lg:grid-cols-3">
         {homeContent.processSteps.map((step, index) => (
-          <Card key={step.title}>
+          <Card key={step.title} className="overflow-hidden p-0">
+            {step.imageSrc ? (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-t-[28px]">
+                <Image
+                  src={step.imageSrc}
+                  alt={step.imageAlt ?? step.title}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            ) : null}
+            <div className="p-6">
             <Badge>Step {index + 1}</Badge>
             <h3 className="mt-4 font-display text-2xl text-walnut">{step.title}</h3>
             <p className="mt-3 text-sm leading-7 text-muted">{step.description}</p>
+            </div>
           </Card>
         ))}
       </div>

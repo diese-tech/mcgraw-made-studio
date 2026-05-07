@@ -8,6 +8,9 @@ export const categories: Category[] = [
       "Thoughtful one-off pieces for birthdays, family milestones, and meaningful celebrations.",
     eyebrow: "Gift-ready",
     imageLabel: "Engraved keepsakes",
+    imageSrc:
+      "/images/mcgraw-made/gallery/mcgraw-made-gallery-engraved-comb-brush-keepsake-16.jpg",
+    imageAlt: "Engraved wooden comb and brush keepsake set",
   },
   {
     slug: "awards-plaques",
@@ -16,6 +19,8 @@ export const categories: Category[] = [
       "Recognition pieces that feel elevated, polished, and worthy of the moment.",
     eyebrow: "Professional finish",
     imageLabel: "Award displays",
+    imageSrc: "/images/mcgraw-made/gallery/mcgraw-made-gallery-lakeland-award-medal-15.jpg",
+    imageAlt: "Engraved Lakeland best in show award medal",
   },
   {
     slug: "signs-decor",
@@ -24,6 +29,8 @@ export const categories: Category[] = [
       "Statement decor, entry signs, and custom pieces designed to anchor a room or event.",
     eyebrow: "Studio-crafted",
     imageLabel: "Decor and signage",
+    imageSrc: "/images/mcgraw-made/hero/mcgraw-made-hero-custom-family-sign-04.jpg",
+    imageAlt: "Personalized family sign with raised lettering",
   },
   {
     slug: "seasonal-items",
@@ -32,6 +39,9 @@ export const categories: Category[] = [
       "Holiday-ready designs and limited seasonal collections that still feel personal.",
     eyebrow: "Seasonal favorites",
     imageLabel: "Seasonal studio work",
+    imageSrc:
+      "/images/mcgraw-made/ready_made/mcgraw-made-ready-made-santa-tracker-ornaments-07.jpg",
+    imageAlt: "Colorful Santa tracker ornaments arranged on a tabletop",
   },
   {
     slug: "uv-printed-items",
@@ -40,6 +50,9 @@ export const categories: Category[] = [
       "Clean, vibrant detail for custom branded pieces, keepsakes, and display items.",
     eyebrow: "Crisp detail",
     imageLabel: "UV printed products",
+    imageSrc:
+      "/images/mcgraw-made/story_process/mcgraw-made-process-uv-printed-card-detail-07.jpg",
+    imageAlt: "Finished UV printed card detail after production",
   },
   {
     slug: "3d-printed-items",
@@ -48,5 +61,7 @@ export const categories: Category[] = [
       "Functional and decorative printed pieces that bring ideas into physical form quickly.",
     eyebrow: "Versatile fabrication",
     imageLabel: "3D printed products",
+    imageSrc: "/images/mcgraw-made/gallery/mcgraw-made-gallery-custom-van-event-sign-14.jpg",
+    imageAlt: "Custom dimensional van-shaped event sign",
   },
 ];

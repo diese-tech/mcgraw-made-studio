@@ -17,6 +17,8 @@ export function CategoryGrid() {
             eyebrow={category.eyebrow}
             title={category.title}
             description={category.description}
+            imageSrc={category.imageSrc}
+            imageAlt={category.imageAlt}
           />
         ))}
       </div>
