@@ -61,5 +61,8 @@ export const categories: Category[] = [
       "Functional and decorative printed pieces that bring ideas into physical form quickly.",
     eyebrow: "Versatile fabrication",
     imageLabel: "3D printed products",
+    imageSrc:
+      "/images/mcgraw-made/3d_printed/mcgraw-made-3d-printed-mini-bookshelf-01.jpg",
+    imageAlt: "3D printed mini bookshelf filled with miniature books",
   },
 ];

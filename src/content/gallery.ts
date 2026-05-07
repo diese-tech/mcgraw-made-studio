@@ -1,6 +1,7 @@
 import type { GalleryItem } from "@/content/types";
 
 const galleryPath = "/images/mcgraw-made/gallery";
+const printedPath = "/images/mcgraw-made/3d_printed";
 
 export const galleryItems: GalleryItem[] = [
   {
@@ -158,5 +159,19 @@ export const galleryItems: GalleryItem[] = [
     imageLabel: "Keepsake",
     imageSrc: `${galleryPath}/mcgraw-made-gallery-engraved-comb-brush-keepsake-16.jpg`,
     imageAlt: "Engraved wooden comb and brush keepsake set",
+  },
+  {
+    slug: "3d-printed-mini-bookshelf",
+    title: "3D Printed Mini Bookshelf",
+    category: "3D Printed Items",
+    caption:
+      "A decorative miniature bookshelf that shows small-format printing, detail, and display value.",
+    materials: "3D printed shelf with miniature printed book details",
+    repeatability: "Can Make Similar",
+    ctaLabel: "Request 3D Printed Items",
+    ctaHref: "/custom-projects",
+    imageLabel: "3D print",
+    imageSrc: `${printedPath}/mcgraw-made-3d-printed-mini-bookshelf-01.jpg`,
+    imageAlt: "3D printed mini bookshelf filled with miniature books",
   },
 ];
