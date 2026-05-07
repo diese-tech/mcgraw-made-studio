@@ -75,7 +75,7 @@ export const homeContent: HomeContent = {
     eyebrow: "McGraw roots",
     title: "Built from family roots, shaped into a flexible studio brand.",
     description:
-      "The McGraw name nods to the family's New York roots while making space for a studio that can create across gifts, events, decor, and fabricated pieces.",
+      "The McGraw name nods to a place that still feels like home while making space for a Central Florida studio that can create across gifts, events, decor, and fabricated pieces.",
     cta: { label: "Read the Story", href: "/about" },
     imageSrc:
       "/images/mcgraw-made/story_process/mcgraw-made-process-uv-printing-in-progress-06.jpg",

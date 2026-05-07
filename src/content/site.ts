@@ -4,7 +4,7 @@ export const siteContent: SiteContent = {
   brand: {
     name: "McGraw Made Studio",
     tagline: "Custom fabrication, gifts, awards, and keepsakes made with care.",
-    location: "Based in New York",
+    location: "Based in Central Florida",
     email: "hello@mcgrawmade.com",
     phone: "646-372-6479",
   },

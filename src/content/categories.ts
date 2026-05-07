@@ -61,7 +61,5 @@ export const categories: Category[] = [
       "Functional and decorative printed pieces that bring ideas into physical form quickly.",
     eyebrow: "Versatile fabrication",
     imageLabel: "3D printed products",
-    imageSrc: "/images/mcgraw-made/gallery/mcgraw-made-gallery-custom-van-event-sign-14.jpg",
-    imageAlt: "Custom dimensional van-shaped event sign",
   },
 ];
