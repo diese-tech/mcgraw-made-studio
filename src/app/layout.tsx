@@ -16,6 +16,23 @@ const displayFont = Playfair_Display({
   weight: ["600", "700"],
 });
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: siteContent.brand.name,
+  description:
+    "Handcrafted custom fabrication studio in Central Florida creating personalized gifts, signage, awards, decor, and heirloom-quality pieces.",
+  areaServed: ["Central Florida", "United States"],
+  address: {
+    "@type": "PostalAddress",
+    addressRegion: "FL",
+    addressCountry: "US",
+  },
+  url: siteContent.seo.siteUrl,
+  email: siteContent.brand.email,
+  telephone: siteContent.brand.phone,
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteContent.seo.siteUrl),
   title: {
@@ -67,6 +84,10 @@ export default function RootLayout({
       className={`${bodyFont.variable} ${displayFont.variable} h-full`}
     >
       <body className="min-h-full bg-cream text-walnut antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

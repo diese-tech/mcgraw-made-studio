@@ -18,8 +18,8 @@ export default function ReadyMadePage() {
   return (
     <Section
       eyebrow="Ready-Made Items"
-      title="Shop finished pieces without adding cart complexity."
-      description="Each item supports a direct Square payment link and a clear availability status."
+      title="Browse handcrafted pieces available now."
+      description="Each Ready-Made Item includes clear availability and a direct secure checkout link."
     >
       <div className="grid gap-6 lg:grid-cols-2">
         {readyMadeItems.map((item) => (

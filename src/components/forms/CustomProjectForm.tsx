@@ -81,8 +81,13 @@ export function CustomProjectForm() {
             id="emailOrPhone"
             name="emailOrPhone"
             required
+            type="text"
+            inputMode="email"
+            autoComplete="email tel"
             className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
             placeholder="name@email.com or (555) 000-0000"
+            pattern="^(?:\S+@\S+\.\S+|[+]?[0-9().\-\s]{7,})$"
+            title="Enter a valid email address or phone number so we can follow up."
           />
         </FormField>
 
@@ -128,13 +133,14 @@ export function CustomProjectForm() {
           </FormField>
         </div>
 
-        <FormField id="deadline" label="Deadline" required>
+        <FormField id="deadline" label="Deadline" required hint="If flexible, choose your ideal date.">
           <input
             id="deadline"
             name="deadline"
             required
+            type="date"
+            autoComplete="off"
             className="rounded-2xl border border-line bg-white px-4 py-3 outline-none disabled:cursor-not-allowed disabled:opacity-70"
-            placeholder="Event date or needed-by date"
           />
         </FormField>
 
@@ -210,8 +216,7 @@ export function CustomProjectForm() {
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-xl text-sm leading-7 text-muted">
-          We&apos;ll send this request to the business inbox and send a confirmation email when an
-          email address is included in your contact field.
+          We&apos;ll review your inquiry and follow up within 1 to 2 business days with next steps.
         </p>
         <Button type="submit">{submitting ? "Sending..." : "Submit Request"}</Button>
       </div>

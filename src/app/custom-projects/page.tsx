@@ -15,8 +15,8 @@ export default function CustomProjectsPage() {
   return (
     <Section
       eyebrow="Custom Project"
-      title="Start with a clear quote request instead of a messy DM thread."
-      description="Use this form to share the basics we need for a structured follow-up. Successful submissions are sent to the business inbox and then continue to the success page."
+      title="Let's shape your custom piece with a clear, guided inquiry."
+      description="Share your idea, timing, and details, and we'll follow up with thoughtful next steps tailored to your project."
     >
       <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
         <Card>
