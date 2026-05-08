@@ -2,6 +2,8 @@ import type { ReadyMadeItem } from "@/content/types";
 
 const readyMadePath = "/images/mcgraw-made/ready_made";
 
+// TODO(launch): Replace placeholder square.link URLs with live Square checkout links before public launch.
+
 export const readyMadeItems: ReadyMadeItem[] = [
   {
     slug: "holiday-activity-jar",

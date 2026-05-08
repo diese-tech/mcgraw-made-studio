@@ -11,7 +11,7 @@ export const homeContent: HomeContent = {
     supportCta: { label: "Browse Gallery", href: "/gallery" },
     stats: [
       { label: "Typical custom reply", value: "1-2 business days" },
-      { label: "Main purchase path", value: "Square payment links" },
+      { label: "Checkout", value: "Secure Square checkout" },
       { label: "Best fit", value: "Gifts, events, awards, decor" },
     ],
     collageLabels: [
@@ -40,10 +40,10 @@ export const homeContent: HomeContent = {
     ],
   },
   trustBar: [
-    "Structured inquiry flow",
-    "Premium custom presentation",
-    "Ready-made buy now links",
-    "Pickup and shipping policies",
+    "Handcrafted in Central Florida",
+    "Secure Square checkout",
+    "Custom replies in 1-2 business days",
+    "Clear shipping and local pickup options",
   ],
   processSteps: [
     {
