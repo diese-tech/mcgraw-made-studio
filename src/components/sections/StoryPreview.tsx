@@ -24,13 +24,13 @@ export function StoryPreview() {
         <Card className="flex flex-col justify-between">
           <div className="space-y-4">
             <p className="text-sm leading-7 text-muted">
-              The McGraw name comes from a place that still feels like home. The studio grew from
-              that same idea — making things that feel personal, considered, and worth passing along.
+              McGraw Ave was the street the studio is named for — a family&apos;s home, a place
+              a new family started, and one that still shows up in dreams.
             </p>
             <p className="text-sm leading-7 text-muted">
-              Whether it&apos;s a wedding keepsake, an event award, or a piece of decor for
-              someone&apos;s home, every project gets the same care. That&apos;s what this studio
-              is built around.
+              That sense of somewhere being specifically yours is what goes into every piece
+              made here. A wedding keepsake, a recognition award, or a sign for someone&apos;s
+              wall: each one gets the same attention.
             </p>
           </div>
           <div className="mt-6">

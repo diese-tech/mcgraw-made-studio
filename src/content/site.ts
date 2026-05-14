@@ -3,13 +3,13 @@ import type { SiteContent } from "@/content/types";
 export const siteContent: SiteContent = {
   brand: {
     name: "McGraw Made Studio",
-    tagline: "Custom fabrication, gifts, awards, and keepsakes made with care.",
+    tagline: "Custom fabrication and personalized gifts, made to order in Central Florida.",
     location: "Based in Central Florida",
     email: "mcgrawdesignco@gmail.com",
     phone: "863-320-0820",
   },
   announcement:
-    "Warm, custom work for gifts, events, awards, decor, and ready-made finds.",
+    "Custom fabrication and personalized gifts, made to order. Central Florida.",
   navigation: [
     { label: "Custom Projects", href: "/custom-projects" },
     { label: "Ready-Made", href: "/ready-made" },
