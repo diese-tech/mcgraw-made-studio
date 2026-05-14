@@ -13,9 +13,11 @@ export function HeroSection() {
       <div className="page-shell grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
         <div className="space-y-8">
           <div className="space-y-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">
-              {hero.eyebrow}
-            </p>
+            {hero.eyebrow ? (
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-muted">
+                {hero.eyebrow}
+              </p>
+            ) : null}
             <h1 className="text-balance font-display text-5xl leading-tight text-walnut sm:text-6xl">
               {hero.title}
             </h1>
