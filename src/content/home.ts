@@ -3,7 +3,7 @@ import type { HomeContent } from "@/content/types";
 export const homeContent: HomeContent = {
   hero: {
     eyebrow: "",
-    title: "Made-to-order pieces that feel personal, polished, and worth keeping.",
+    title: "Made-to-order pieces built by hand from the studio's own designs.",
     description:
       "Every piece starts with something worth keeping — a name, a date, a moment that deserves more than a generic gift.",
     primaryCta: { label: "Start a Custom Project", href: "/custom-projects" },
@@ -65,17 +65,17 @@ export const homeContent: HomeContent = {
     {
       title: "Approve and make it real",
       description:
-        "Once the details are approved, production moves forward with a polished finish.",
+        "Once the details are locked, the piece gets cut, assembled, printed, or engraved — depending on what it calls for.",
       imageSrc:
         "/images/mcgraw-made/story_process/mcgraw-made-process-uv-printed-card-detail-07.jpg",
       imageAlt: "Finished UV printed card detail after production",
     },
   ],
   story: {
-    eyebrow: "McGraw roots",
-    title: "Built from family roots, shaped into a flexible studio brand.",
+    eyebrow: "The name",
+    title: "Named for the street that still feels like home.",
     description:
-      "The McGraw name nods to a place that still feels like home while making space for a Central Florida studio that can create across gifts, events, decor, and fabricated pieces.",
+      "McGraw Ave was a family's home — the street where childhood happened, where a new family started, and a place that still shows up in dreams.",
     cta: { label: "Read the Story", href: "/about" },
     imageSrc:
       "/images/mcgraw-made/story_process/mcgraw-made-process-uv-printing-in-progress-06.jpg",
@@ -84,7 +84,7 @@ export const homeContent: HomeContent = {
   finalCta: {
     title: "Have a custom idea or need something gift-ready now?",
     description:
-      "Use the route that fits best. Start a Custom Project for quote-based work or shop a Ready-Made Item if you want something available now.",
+      "Need something specific built? Start a Custom Project and get a quote. Want something ready to gift today? Browse Ready-Made.",
     primaryCta: { label: "Start a Custom Project", href: "/custom-projects" },
     secondaryCta: { label: "Shop Ready-Made", href: "/ready-made" },
   },

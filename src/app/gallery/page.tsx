@@ -18,7 +18,7 @@ export default function GalleryPage() {
     <Section
       eyebrow="Gallery"
       title="Past work that helps customers picture what is possible."
-      description="Gallery Items act as proof, inspiration, and a starting point for repeatable requests."
+      description="Each piece here came out of this studio. If something catches your eye, you can request something similar or start from your own idea."
     >
       <div className="grid gap-6 lg:grid-cols-2">
         {galleryItems.map((item) => (

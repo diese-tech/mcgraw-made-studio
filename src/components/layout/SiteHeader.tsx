@@ -11,9 +11,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-[rgba(247,245,242,0.88)] backdrop-blur">
       <div className="page-shell flex min-h-20 items-center justify-between gap-4">
-        <Link href="/" className="min-w-0">
+        <Link href="/" className="shrink-0">
           <p className="font-display text-2xl text-walnut">{siteContent.brand.name}</p>
-          <p className="text-sm text-muted">{siteContent.brand.tagline}</p>
+          <p className="text-sm text-muted lg:hidden">{siteContent.brand.tagline}</p>
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
