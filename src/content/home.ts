@@ -2,10 +2,10 @@ import type { HomeContent } from "@/content/types";
 
 export const homeContent: HomeContent = {
   hero: {
-    eyebrow: "Warm premium custom fabrication",
+    eyebrow: "",
     title: "Made-to-order pieces that feel personal, polished, and worth keeping.",
     description:
-      "McGraw Made Studio creates custom gifts, awards, decor, signage, and ready-made finds for meaningful moments, events, and businesses.",
+      "Every piece starts with something worth keeping — a name, a date, a moment that deserves more than a generic gift.",
     primaryCta: { label: "Start a Custom Project", href: "/custom-projects" },
     secondaryCta: { label: "Shop Ready-Made", href: "/ready-made" },
     supportCta: { label: "Browse Gallery", href: "/gallery" },
