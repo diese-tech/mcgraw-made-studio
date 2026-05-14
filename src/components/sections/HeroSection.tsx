@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { homeContent } from "@/content/home";
 
 export function HeroSection() {
@@ -28,18 +27,6 @@ export function HeroSection() {
             <Button href={hero.secondaryCta.href} variant="secondary">
               {hero.secondaryCta.label}
             </Button>
-            <Button href={hero.supportCta.href} variant="ghost">
-              {hero.supportCta.label}
-            </Button>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-3">
-            {hero.stats.map((stat) => (
-              <Card key={stat.label} className="rounded-[22px]">
-                <p className="text-sm text-muted">{stat.label}</p>
-                <p className="mt-2 text-lg font-semibold text-walnut">{stat.value}</p>
-              </Card>
-            ))}
           </div>
         </div>
 
