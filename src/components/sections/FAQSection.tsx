@@ -7,7 +7,6 @@ export function FAQSection() {
     <Section
       eyebrow="FAQ"
       title="Helpful answers before someone reaches out."
-      description="Support the main flows with just enough clarity to reduce friction."
       className="bg-surface"
     >
       <div className="grid gap-6 lg:grid-cols-3">

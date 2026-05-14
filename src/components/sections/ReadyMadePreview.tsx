@@ -8,9 +8,9 @@ import { getReadyMadePrimaryLabel } from "@/lib/readyMade";
 export function ReadyMadePreview() {
   return (
     <Section
-      eyebrow="Buy-now path"
-      title="Ready-Made Items for customers who want something available now."
-      description="Each item can point directly to a Square payment page without adding cart complexity."
+      eyebrow="Ready to gift"
+      title="Finished pieces you can buy today."
+      description="Small-batch and seasonal items with direct Square checkout — no inquiry needed."
       className="bg-[rgba(234,228,220,0.44)]"
     >
       <div className="grid gap-6 lg:grid-cols-3">
