@@ -6,9 +6,8 @@ import { galleryItems } from "@/content/gallery";
 export function FeaturedGallery() {
   return (
     <Section
-      eyebrow="Proof before pitch"
-      title="Recent work that builds trust fast."
-      description="Show strong visual proof early so visitors can quickly understand quality, range, and style."
+      eyebrow="Recent work"
+      title="A look at what comes out of this studio."
       className="bg-surface"
     >
       <div className="grid gap-6 lg:grid-cols-3">

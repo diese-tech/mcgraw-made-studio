@@ -52,7 +52,7 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Button href="/custom-projects" className="w-full" variant="secondary">
+            <Button href="/custom-projects" className="w-full">
               Start a Custom Project
             </Button>
           </div>
