@@ -75,7 +75,7 @@ export const homeContent: HomeContent = {
     eyebrow: "The name",
     title: "Named for the street that still feels like home.",
     description:
-      "McGraw Ave was a family's home — the street where childhood happened, where a new family started, and a place that still shows up in dreams. That sense of somewhere being specifically yours is what the studio builds into each piece.",
+      "McGraw Ave was a family's home — the street where childhood happened, where a new family started, and a place that still shows up in dreams.",
     cta: { label: "Read the Story", href: "/about" },
     imageSrc:
       "/images/mcgraw-made/story_process/mcgraw-made-process-uv-printing-in-progress-06.jpg",
